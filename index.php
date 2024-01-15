@@ -5,6 +5,7 @@ class Movie {
   public $description;
   public $year;
   public $genres;
+  public $checkYearVisibility = false;
 
 //COSTRUTTORE
 
@@ -23,6 +24,7 @@ public function __construct(string $title, string $description, int $year, array
   public function checkYear() {
     if($this->year < 2000) {
       echo 'inizia ad essere d\'altri tempi';
+      $this->checkYearVisibility = true;
     };
   }
 
@@ -69,9 +71,11 @@ echo $lord->description;
 
 print '<br>'.'<br>';
 
+if($lord->checkYearVisibility){
 echo 'Metodi';
 echo '<br>';
 print $lord->checkYear();
+}
 
 echo '<br>';
 echo '<hr>';
@@ -103,6 +107,8 @@ echo $matrix->description;
 
 print '<br>'.'<br>';
 
+if($matrix->checkYearVisibility){
 echo 'Metodi';
 echo '<br>';
 print $matrix->checkYear();
+}
